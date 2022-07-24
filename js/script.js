@@ -1,16 +1,21 @@
-const icons = document.querySelectorAll(".section-1-icons i");
+document.querySelector('.menu').addEventListener('click', () => {
+	document.querySelectorAll('.target').forEach((item) => {
+		item.classList.toggle('change');
+	})
+})
 
-let iconCount = 1;
+const icons = document.querySelectorAll('.section-1-icons i')
+let i = 1
 
 setInterval(() => {
-  iconCount++;
-  const icon = document.querySelector(".section-1-icons .change");
-  icon.classList.remove("change");
+	i++
+	const icon = document.querySelector('.section-1-icons .change')
+	icon.classList.remove('change')
 
-  if (iconCount > icons.length) {
-    icons[0].classList.add("change");
-    iconCount = 1;
-  } else {
-    icon.nextElementSibling.classList.add("change");
-  }
-}, 1000);
+	if (i > icons.length) {
+		icons[0].classList.add('change')
+		i = 1
+	} else {
+		icon.nextElementSibling.classList.add('change')
+	}
+}, 4000)
